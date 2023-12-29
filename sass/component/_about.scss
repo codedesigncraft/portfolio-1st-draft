@@ -1,0 +1,156 @@
+
+.about {
+    grid-column: full-start / full-end;
+    grid-row: 3 / 4;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(15rem, 1fr));
+    width: 70%;
+    margin: 0 auto;
+    column-gap: 2rem;
+
+    @media only screen and (max-width: $bp-small) {
+        grid-template-columns: minmax(min-content, 1fr);
+        grid-auto-rows: 1fr;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        width: 90%;
+    }
+
+    &__content {
+        padding-top: 10rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            padding-left: 6vw;
+        }
+        @media only screen and (max-width: $bp-small) {
+            margin-top: 8rem;
+        }
+    }
+
+    &__text {
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+        line-height: 1.6;
+        color: var(--color-grey-dark-3);
+        margin: .5rem 0 1.5rem 0;
+    }
+
+    &__cards {
+       position: relative;
+       transform: scale(.8);
+       display: grid;
+       justify-items: right;
+
+       @media only screen and (max-width: $bp-medium) {
+            justify-items: center;
+            align-self: start;
+            transform: translateY(0rem);
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            justify-items: center;
+            align-self: center;
+            transform: translateY(-10rem) scale(.7);
+        }
+
+       &-link:link,
+       &-link:visited {
+            font-size: 1.2rem;
+            color: var(--color-back);
+            text-decoration: none;
+            padding: .8rem 1.2rem;
+            border-bottom: 1px solid #fb982f;
+            font-weight: 500;
+            transition: all .2s;
+       }
+
+       &-link:hover,
+       &-link:active {
+            color: #fff;
+            background-color: #fb982f;
+       }
+    }
+
+    &__img {
+        display: block;
+        width: 6rem;
+    }
+
+    &__card {
+        display: grid;
+        width: 19vw;
+        justify-items: center;
+        background-color: transparent;
+        box-shadow: 0px 20px 24px 3px rgba(251, 161, 40, 0.42);
+        background-color: #fff;
+        border-radius: 15px;
+        position: absolute;
+        padding: 3rem 0;
+
+        @media only screen and (max-width: $bp-small) {
+            width: 40vw;
+            transform-style: preserve-3d;
+            padding: 4rem 2rem;
+        }
+
+        &-1 {
+            transform: translateX(10vw) translateY(35vh);
+            transition: all .2s;
+            z-index: 30;
+
+            @media only screen and (max-width: $bp-small) {
+                transform: translateX(35vw) translateY(1vh);
+            }
+
+            &:hover {
+                transform: scale(1.1) translateX(10vw) translateY(35vh);
+                z-index: 999;
+
+                @media only screen and (max-width: $bp-small) {
+                    transform: scale(1.1) translateX(35vw) translateY(1vh);
+                }
+            }
+        }
+        
+        &-2 {
+            transform: translateX(-10vw);
+            transition: all .2s;
+            z-index: 10;
+
+            @media only screen and (max-width: $bp-small) {
+                transform: translateX(-35vw);
+            }
+
+            &:hover {
+                transform: scale(1.1) translateX(-10vw);
+                z-index: 999;
+
+                @media only screen and (max-width: $bp-small) {
+                    transform: scale(1.1) translateX(-35vw);
+                }
+            }
+        }
+        
+        &-3 {
+            transform: translateY(10rem);
+            transition: all .2s;
+            z-index: 20;
+
+            @media only screen and (max-width: $bp-small) {
+                transform: translateY(-10rem);
+            }
+
+            &:hover {
+                transform: scale(1.1) translateY(10rem);
+                z-index: 999;
+
+                @media only screen and (max-width: $bp-small) {
+                    transform: scale(1.1) translateY(-10rem);
+                }
+            }
+        }
+    }
+
+}
